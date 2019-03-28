@@ -1,12 +1,17 @@
 
 /******************************************
-import original ranking source files from .xlsx to .sas7bdat
+Import original ranking source files from .xlsx to .sas7bdat
 *******************************************/
 
 %let root=Y:\Desktop\University Rankings;
-libname out "&root\export";
+libname out "&root\sasdata";
 
 
+/******************************************
+file: 	 the import file path
+sheet: 	 name of sheet to be imported
+outname: output data name
+*******************************************/
 %macro insheet(file, sheet, outname);
 
 proc import out=&outname
