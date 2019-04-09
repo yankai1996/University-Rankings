@@ -3,7 +3,7 @@
 Import original ranking source files from .xlsx to .sas7bdat
 *******************************************/
 
-%let root=Y:\Desktop\University Rankings;
+%let root=Y:\TEMP\University-Rankings;
 libname out "&root\sasdata";
 
 
