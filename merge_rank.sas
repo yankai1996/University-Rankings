@@ -71,11 +71,11 @@ drop score;
 proc sort; by qs_id;
 run;
 
-data ur.qs_the_link; set qs_the_link; run;
+data out.qs_the_link; set qs_the_link; run;
 
 
 
-data qs_the; set ur.qs_the_link;
+data qs_the; set out.qs_the_link;
 id = the_id;
 proc sort; by id;
 run;
@@ -131,11 +131,11 @@ drop score wrong;
 proc sort; by qs_id;
 run;
 
-data ur.qs_arwu_link; set qs_arwu_link; run;
+data out.qs_arwu_link; set qs_arwu_link; run;
 
 
 
-data qs_arwu; set ur.qs_arwu_link;
+data qs_arwu; set out.qs_arwu_link;
 id=arwu_id;
 proc sort; by id;
 run;
@@ -170,5 +170,5 @@ if country="" then country=F4;
 keep QS2019 THE2019 ARWU2018 University Country;
 run;
 
-data ur.rankings; set final; run;
+data out.rankings; set final; run;
 
