@@ -3,9 +3,17 @@
 Import rank1-rank2 linking files from .csv to .sas7bdat
 *******************************************/
 
-%let excel=Y:\TEMP\University-Rankings\excel;
+%let root=Y:\TEMP\University-Rankings;
+%let excel=&root\excel;
+libname out "&root\sasdata";
 
 
+/******************************************
+file: 	 the import file path
+outname: output data name
+name1, name2:	qs_name, the_name, arwu_name
+id1, id2:		qd_id, the_id, qrwu_id
+*******************************************/
 %macro incsv(file, outname, name1, id1, name2, id2);
 
 proc import datafile=&file
