@@ -93,29 +93,7 @@ run;
 
 
 
-
-proc import datafile="Y:\Desktop\University Rankings\qs_arwu_link.csv"
-	out=test
-	dbms=csv
-	replace;
-getnames=yes;
-run;
-
-
-data qs_arwu_link; set test;
-qs_name = name1;
-qs_id = id1;
-arwu_name = name2;
-arwu_id = id2;
-score = similarity;
-keep arwu_name arwu_id qs_name qs_id score;
-if score=0 then do;
-	arwu_id=.;
-	arwu_name="";
-end;
-proc sort; by qs_id;
-run;
-
+%incsv("&excel\qs_arwu.csv", qs_the_link, qs_name, qs_id, arwu_name, arwu_id);
 
 data qs_arwu_link; set qs_arwu_link;
 proc sort; by arwu_id descending score;
