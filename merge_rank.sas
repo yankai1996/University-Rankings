@@ -40,6 +40,8 @@ run;
 %mend incsv;
 
 
+
+/***************** Get QS_THE_Link ********************/
 %incsv("&excel\qs_the.csv", qs_the_link, qs_name, qs_id, the_name, the_id);
 
 /*
@@ -93,6 +95,7 @@ run;
 
 
 
+/***************** Get QS_ARWU_Link ********************/
 %incsv("&excel\qs_arwu.csv", qs_the_link, qs_name, qs_id, arwu_name, arwu_id);
 
 data qs_arwu_link; set qs_arwu_link;
@@ -128,6 +131,8 @@ run;
 
 
 
+
+/******************** Merge Final **********************/
 data qs_the_arwu; merge qs_the qs_arwu;
 by qs_id;
 id=qs_id;
