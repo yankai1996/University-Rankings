@@ -1,5 +1,5 @@
 
-libname ur "Y:\Desktop\University Rankings";
+libname out "Y:\TEMP\University-Rankings\sasdata";
 
 data rankings; set ur.rankings; 
 if QS2019<=500;
@@ -20,6 +20,6 @@ run;
 PROC EXPORT 
 	DATA=rank
 	DBMS=excel 
-	OUTFILE='Y:\Desktop\University Rankings\avgRank.xlsx'
+	OUTFILE='Y:\TEMP\University-Rankings\excel\avgRank.xlsx'
 	REPLACE;
 run;
