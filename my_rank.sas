@@ -1,7 +1,13 @@
 
-libname out "Y:\TEMP\University-Rankings\sasdata";
+/*****************************
+My ranking methods
+*****************************/
 
-data rankings; set ur.rankings; 
+%let root=Y:\TEMP\University-Rankings;
+%let excel=&root\excel;
+libname out "&root\sasdata";
+
+data rankings; set out.rankings; 
 if QS2019<=500;
 avg = (QS2019+THE2019+ARWU2018)/3;
 if avg~=.;
@@ -20,6 +26,6 @@ run;
 PROC EXPORT 
 	DATA=rank
 	DBMS=excel 
-	OUTFILE='Y:\TEMP\University-Rankings\excel\avgRank.xlsx'
+	OUTFILE='&excel\avgRank.xlsx'
 	REPLACE;
 run;
