@@ -14,3 +14,4 @@ Best global universities in the world.
 1. Run `excel2sas.sas` which imports the source `excel/rankings.xlsx` and outputs `qs2019.sas7bdat`, `the2019.sas7bdat`, and `arwu2018.sas7bdat`. 
 2. Run `python3 match.py`. This will generate two files `qs_the.csv` and `qs_arwu.csv`. Each of them links two ranking tables together.
 3. Run `merge_rank.sas` which merges the above two `.csv` files.
+4. Run `my_rank.sas` to get the new rankings.
