@@ -4,6 +4,7 @@ My ranking methods
 *****************************/
 
 %let root=Y:\TEMP\University-Rankings;
+%let root=Y:\Local\GitHub\University-Rankings;
 %let excel=&root\excel;
 libname out "&root\sasdata";
 
@@ -26,6 +27,6 @@ run;
 PROC EXPORT 
 	DATA=rank
 	DBMS=excel 
-	OUTFILE='&excel\avgRank.xlsx'
+	OUTFILE="&excel\avgRank.xlsx"
 	REPLACE;
 run;
